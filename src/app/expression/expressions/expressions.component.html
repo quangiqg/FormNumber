@@ -1,0 +1,25 @@
+<!-- expressions.component.html -->
+<div>
+    <label for="numberOfExpressions">Number of Expressions:</label>
+    <input type="number" id="numberOfExpressions" [(ngModel)]="numberOfExpressions">
+    <button (click)="generateForms()">Generate Forms</button>
+  </div>
+  
+ <!-- expressions.component.html -->
+<div *ngFor="let expression of expressions; let i = index">
+    <h3>Expression {{ i + 1 }}</h3>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" [(ngModel)]="expression.name">
+  
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" [(ngModel)]="expression.age">
+  
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" [(ngModel)]="expression.email">
+    </form>
+  </div>
+  
+  <button (click)="submitForms()">Submit Forms</button>
+  
+  
